@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
 }
-.app__body {
+.App {
   background-color: #f1f2f5;
+}
+.app__body {
   display: flex;
 }

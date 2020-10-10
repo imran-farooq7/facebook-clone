@@ -2,16 +2,26 @@ import React from "react";
 import "./App.css";
 import Feed from "./components/feed/Feed";
 import Header from "./components/header/Header";
+import Login from "./components/login/Login";
 import SideBar from "./components/sidebar/SideBar";
+import Widgets from "./components/widgets/Widgets";
 
 function App() {
+  const user = null;
   return (
     <div className="App">
-      <Header />
-      <div className="app__body">
-        <SideBar />
-        <Feed />
-      </div>
+      {user ? (
+        <>
+          <Header />
+          <div className="app__body">
+            <SideBar />
+            <Feed />
+            <Widgets />
+          </div>
+        </>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }
