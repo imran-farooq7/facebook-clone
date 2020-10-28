@@ -6,15 +6,18 @@ import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineO
 import NearMeIcon from "@material-ui/icons/NearMe";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { ExpandMoreOutlined } from "@material-ui/icons";
+import firebase from 'firebase'
 
-function Post({ profilePic, image, userName, timeStamp, message }) {
+function Post({ profilePic, image, userName, timestamp, message }) {
+  
+
   return (
     <div className="post">
       <div className="post__top">
         <Avatar src={profilePic} className="post__avatar" />
         <div className="post__topInfo">
           <h3>{userName}</h3>
-          <p>timeStamp</p>
+  <p>{new Date(firebase.firestore.Timestamp.now().seconds*1000).toLocaleString('en-us',{timeZone: "Asia/Karachi"})}</p>
         </div>
       </div>
       <div className="post__bottom">
